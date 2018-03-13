@@ -9,9 +9,14 @@ for i in range(0,df.shape[0]):
         df.iloc[i][j]=pd.to_numeric(df.iloc[i][j])
 df.columns = [c.strip() for c in df.columns.values.tolist()]
 df.columns = [c.replace(' ','') for c in df.columns.values.tolist()]
-writer = pd.ExcelWriter('pandas_simple.xlsx', engine='xlsxwriter')
-df.to_excel(writer, sheet_name='Sheet1')
-writer.save()
+
+#install geopandas shapely in anaconda prompt
+#conda install -c conda-forge fiona shapely pyproj rtree
+#conda install pandas
+
+#writer = pd.ExcelWriter('pandas_simple.xlsx', engine='xlsxwriter')
+#df.to_excel(writer, sheet_name='Sheet1')
+#writer.save()
 
 
 #with open('cancer2017.csv', 'rb') as f:
